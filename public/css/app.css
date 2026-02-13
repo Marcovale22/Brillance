@@ -1,0 +1,213 @@
+:root{
+      --celeste:#4577ff;
+    }
+
+.main{
+    height: 100%;
+}
+
+/*------NAVBAR------*/
+.logo-navbar {
+    height: 90px; 
+    width: 100px; 
+}
+
+
+.navbar .nav-link {
+    color: black !important;
+    font-weight: 500;
+    font-size: 1.2rem !important;
+}   
+
+.navbar .nav-item {
+    margin: 0 30px;
+}
+
+.navbar .nav-link:hover {
+    color: var(--celeste) !important;
+    font-weight: 700;
+    font-size: 1.4rem !important;
+}
+
+.navbar-left {
+    margin-left: 0px !important;
+}
+
+.navbar-right {
+    margin-right: 0px !important;
+}
+
+.navbar-collapse {
+    position: static !important;
+}
+
+@media (min-width: 1200px) {
+    .navbar {
+        height: 90px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .navbar-nav.ms-auto,
+    .navbar-nav.me-auto {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+/*-----HOMEPAGE----*/
+.homepage {
+    width: 100%;
+    height: 100vh;
+
+    background: url("../img/homepage/hero1.png") center/cover no-repeat;
+
+    display: flex;
+    align-items: center;
+}
+
+/* Colonna sinistra */
+.hero-content {
+    width: 50%;
+    padding: 80px;
+
+    color: white;
+
+    /* sfondo leggermente scuro per leggere bene */
+    /*background: rgba(0, 0, 0, 0.3);*/
+}
+
+/* Stile testo */
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* Bottone */
+.home-btn {
+    display: inline-block;
+    padding: 12px 30px;
+
+    background: #00aaff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+
+    font-weight: bold;
+}
+
+.home-btn:hover {
+    background: #0088cc;
+}
+
+/* Sezione */
+.home-servizi {
+    padding: 100px 0;
+    background: #fff;
+}
+
+/* Titolo */
+.title-home {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: var(--celeste);
+}
+
+/* Grid */
+.servizi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    max-width: 1200px;   /* controlla larghezza totale */
+    margin: 0 auto;      /* centra tutto */
+}
+
+
+/* Card */
+.servizio-card {
+    position: relative;
+    height: 500px;
+    width: 100%;        /* IMPORTANTISSIMO */
+    overflow: hidden;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    transition: transform .4s ease;
+}
+
+
+/* immagini */
+.card-condomini {
+    background-image: url('../img/servizi/scale.jpg');
+}
+
+.card-aziende {
+    background-image: url('../img/servizi/azienda.jpg');
+}
+
+/* overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    transition: opacity .4s ease;
+}
+
+/* testo */
+.servizio-card h3 {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 26px;
+    z-index: 2;
+}
+
+/* hover */
+.servizio-card:hover {
+    transform: scale(1.03);
+}
+
+.servizio-card:hover .overlay {
+    opacity: 0;
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+    .servizi-grid {
+        grid-template-columns: 1fr;
+    }
+    .servizio-card {
+        height: 320px;
+    }
+}
+
+
+.home-chiSiamo{
+    height: 100vh;
+    background-color: var(--celeste);
+}
+
+.home-unisciti{
+    height: 100vh;
+    width: 100%;
+
+    background:
+        linear-gradient(rgba(69,119,255,0.6), rgba(69,119,255,0.6)),
+        url("../img/unisciti/unisciti.png");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
