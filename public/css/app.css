@@ -88,6 +88,37 @@
     margin-bottom: 30px;
 }
 
+.contact-info {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: #1e2a38;
+    padding: 12px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.contact-item i {
+    color: #2b7cff;
+}
+
+.contact-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
 /* Bottone */
 .home-btn {
     display: inline-block;
@@ -199,7 +230,7 @@
 }
 
 .home-unisciti{
-    height: 100vh;
+    height: 100%;
     width: 100%;
 
     background:
@@ -210,4 +241,86 @@
     background-size: cover;
     background-repeat: no-repeat;
     
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+    font-size: 14px;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    
+}
+
+.job-form {
+    background: white;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.job-form h2 {
+    margin-bottom: 5px;
+    text-align: center;
+    color: #1e2a38;
+}
+
+
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2f3e4e;
+}
+
+.form-group input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #dbe2ea;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2b7cff;
+    box-shadow: 0 0 0 3px rgba(43,124,255,0.15);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #2b7cff;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #1f5fd4;
 }

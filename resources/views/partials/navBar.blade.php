@@ -18,9 +18,8 @@
 
             {{-- SEZIONE SINISTRA (DESKTOP) --}}
             <ul class="navbar-nav me-auto mb-2 mb-lg-0  navbar-left">
-                <li  class="nav-item"><a  class="nav-link" href="#">Servizi</a></li>
-                <li  class="nav-item"><a  class="nav-link" href="#">Chi siamo</a></li> 
-                <li  class="nav-item"><a  class="nav-link" href="#">Unisciti a noi</a></li>      
+                <li  class="nav-item"><a  class="nav-link" href="#Servizi">Servizi</a></li> 
+                <li  class="nav-item"><a  class="nav-link" href="#Unisciti a noi">Unisciti a noi</a></li>      
             </ul>
 
            

@@ -6,12 +6,12 @@
             {{-- SINISTRA --}}
             <div class="col-12 col-lg-4">
                 <div class="small">
-                    <div>Via Monsampietro, 68 - 63091 Ascoli Piceno (AP)</div>
+                    <div>Via Napoli, 71 - 63100 Ascoli Piceno (AP)</div>
                     <div>Tel. +39 340 561 8282</div>
                     <div>
                         <a href="mailto:info@cantinabellò.com"
                            class="text-light text-decoration-none">
-                            info@cantinabellò.com
+                            info@brillance.com
                         </a>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
             {{-- CENTRO --}}
             <div class="col-12 col-lg-4">
                 <div class="small">
-                    <div style="text-align: center;">© Azienda Vinicola Bellò Spa</div>
+                    <div style="text-align: center;">© Azienda</div>
                     <div style="text-align: center;">
                         P.iva 00000000000   
                     </div>
