@@ -12,37 +12,37 @@
             <div class="contact-info">
                 <a href="tel:+393331234567" class="contact-item">
                     <i class="fas fa-phone"></i>
-                    <span>340 561 8282</span>
+                    <span>329 288 9300</span>
                 </a>
 
-                <a href="mailto:info@brillance.it" class="contact-item">
+                <a href="mailto:mihaelahanganu88@gmail.com" class="contact-item">
                     <i class="fas fa-envelope"></i>
-                    <span>info@brillance.it</span>
+                    <span>mihaelahanganu88@gmail.com</span>
                 </a>
             </div>
         </div>
     </div>
 
-    <div id="Servizi" class="home-servizi">
+    <div id="servizi" class="home-servizi">
 
         <h2 class="title-home">I nostri servizi</h2>
 
         <div class="servizi-grid">
 
-            <div class="servizio-card card-condomini">
+            <a href="{{ route('servizi') }}" class="servizio-card card-condomini">
                 <div class="overlay"></div>
                 <h3>Condomini</h3>
-            </div>
+            </a>
 
-            <div class="servizio-card card-aziende">
+            <a href="{{ route('servizi') }}" class="servizio-card card-aziende">
                 <div class="overlay"></div>
                 <h3>Aziende e Uffici</h3>
-            </div>
+            </a>
 
-            <div class="servizio-card card-aziende">
+            <a href="{{ route('servizi') }}" class="servizio-card card-negozio">
                 <div class="overlay"></div>
                 <h3>Negozi</h3>
-            </div>
+            </a>
 
         </div>
 
@@ -62,7 +62,7 @@
         </div>
     </div>
 --}}
-    <div id="Unisciti a noi" class="home-unisciti">
+    <div id="unisciti" class="home-unisciti">
         <h1 style="color: white; text-align: center; padding-top: 100px; font-size: 42px; font-weight: 700;">Unisciti a noi</h1>
         <p class="subtitle">Compila il modulo e allega il tuo CV</p>
             <div class="form-wrapper">

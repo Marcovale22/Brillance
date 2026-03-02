@@ -108,6 +108,7 @@
     font-size: 14px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .contact-item i {
@@ -183,6 +184,10 @@
     background-image: url('../img/servizi/azienda.jpg');
 }
 
+.card-negozio {
+    background-image: url('../img/servizi/negozio.png');
+}
+
 /* overlay */
 .overlay {
     position: absolute;
@@ -242,6 +247,155 @@
     background-repeat: no-repeat;
     
 }
+
+/*--------PREVENTIVI-------*/
+.home-preventivi{
+    height:100%;
+    
+
+    background:
+        linear-gradient(rgba(0, 1, 4, 0.456)),
+        url("../img/servizi/lavaasciuga.jpg");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+
+.preventivo-section{
+    padding: 70px 20px;
+}
+
+.preventivo-container{
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.preventivo-left h2{
+    margin: 0 0 10px;
+    color: white;
+    font-size: 34px;
+}
+
+.preventivo-left p{
+    margin: 0 0 20px;
+    color: #ffffffb4;
+    line-height: 1.6;
+}
+
+.preventivo-points{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #ffffffb4;
+    display: grid;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.preventivo-right{
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.preventivo-form .form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.preventivo-form label{
+    font-size: 14px;
+    font-weight: 700;
+    color: #2f3e4e;
+}
+
+.preventivo-form input,
+.preventivo-form select,
+.preventivo-form textarea{
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #dbe2ea;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.preventivo-form input:focus,
+.preventivo-form select:focus,
+.preventivo-form textarea:focus{
+    outline: none;
+    border-color: #2b7cff;
+    box-shadow: 0 0 0 3px rgba(43,124,255,0.15);
+}
+
+.row-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.submit-btn{
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #2b7cff;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.submit-btn:hover{
+    background: #1f5fd4;
+}
+
+/* alert */
+.alert-success{
+    background-color: #e6f9f0;
+    border: 1px solid #28a745;
+    color: #155724;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+.alert-error{
+    background: #fff1f2;
+    border: 1px solid #ffb4b4;
+    color: #7a1f1f;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+.alert-error ul{
+    margin: 8px 0 0;
+    padding-left: 18px;
+}
+
+/* responsive */
+@media (max-width: 900px){
+    .preventivo-container{
+        grid-template-columns: 1fr;
+    }
+    .row-2{
+        grid-template-columns: 1fr;
+    }
+}
+
 
 .subtitle {
     text-align: center;
@@ -323,4 +477,8 @@
 
 .submit-btn:hover {
     background: #1f5fd4;
+}
+
+html {
+    scroll-behavior: smooth;
 }

@@ -26,7 +26,7 @@ class CandidaturaRicevuta extends Mailable
 
         return $this->subject($subject)
             // QUESTA deve essere la blade dell'email, non la pagina della form
-            ->view('partials.emails')
+            ->view('emails.candidatura')
             // passa i dati alla blade email
             ->with(['data' => $this->data])
             // allegato senza salvare nulla

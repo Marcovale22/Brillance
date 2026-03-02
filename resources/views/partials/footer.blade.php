@@ -6,12 +6,12 @@
             {{-- SINISTRA --}}
             <div class="col-12 col-lg-4">
                 <div class="small">
-                    <div>Via Napoli, 71 - 63100 Ascoli Piceno (AP)</div>
-                    <div>Tel. +39 340 561 8282</div>
+                    <div>Via Napoli, 71f - 63100 Ascoli Piceno (AP)</div>
+                    <div>Tel. +39 329 288 9300</div>
                     <div>
                         <a href="mailto:info@cantinabellò.com"
                            class="text-light text-decoration-none">
-                            info@brillance.com
+                            mihaelahanganu88@gmail.com
                         </a>
                     </div>
                 </div>
@@ -20,14 +20,14 @@
             {{-- CENTRO --}}
             <div class="col-12 col-lg-4">
                 <div class="small">
-                    <div style="text-align: center;">© Azienda</div>
+                    <div style="text-align: center;">© Azienda brillance di Hanganu Nicoleta Mihaela</div>
                     <div style="text-align: center;">
-                        P.iva 00000000000   
+                        P.iva IT02023780444   
                     </div>
                 </div>
             </div>
 
-            {{-- DESTRA --}}
+            {{-- togliamo per il momento 
             <div class="col-12 col-lg-4">
                 <h5 style="text-align: end;">Seguici sui social</h5>
 
@@ -40,7 +40,7 @@
                             <i class="bi bi-facebook"></i>
                     </a>
 
-                        {{-- Instagram --}}
+                       
                     <a href="https://www.instagram.com/matthias_zoldi"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -52,6 +52,7 @@
 
                 
             </div>
+            --}}
         </div>
 
     </div>

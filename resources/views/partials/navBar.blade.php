@@ -17,9 +17,20 @@
         <div class="collapse navbar-collapse" id="mainNavbar">
 
             {{-- SEZIONE SINISTRA (DESKTOP) --}}
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0  navbar-left">
-                <li  class="nav-item"><a  class="nav-link" href="#Servizi">Servizi</a></li> 
-                <li  class="nav-item"><a  class="nav-link" href="#Unisciti a noi">Unisciti a noi</a></li>      
+            @php
+                $home = route('home');
+                $isHome = request()->routeIs('home');
+                $anchor = fn($id) => $isHome ? "#$id" : $home."#$id";
+            @endphp
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-left">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ $anchor('servizi') }}">Servizi</a>
+                </li> 
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ $anchor('unisciti') }}">Unisciti a noi</a>
+                </li>      
             </ul>
 
            
