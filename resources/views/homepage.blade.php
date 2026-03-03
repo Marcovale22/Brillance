@@ -10,7 +10,7 @@
             <p>Condomini e Aziende sempre perfetti</p>
             
             <div class="contact-info">
-                <a href="tel:+393331234567" class="contact-item">
+                <a href="tel:+39329 288 9300" class="contact-item">
                     <i class="fas fa-phone"></i>
                     <span>329 288 9300</span>
                 </a>
