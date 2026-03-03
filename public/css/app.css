@@ -60,7 +60,7 @@
     width: 100%;
     height: 100vh;
 
-    background: url("../img/homepage/hero1.png") center/cover no-repeat;
+    background: url("/img/homepage/hero1.png") center/cover no-repeat;
 
     display: flex;
     align-items: center;
@@ -177,15 +177,15 @@
 
 /* immagini */
 .card-condomini {
-    background-image: url('../img/servizi/scale.jpg');
+    background-image: url('/img/servizi/scale.jpg');
 }
 
 .card-aziende {
-    background-image: url('../img/servizi/azienda.jpg');
+    background-image: url('/img/servizi/azienda.jpg');
 }
 
 .card-negozio {
-    background-image: url('../img/servizi/negozio.png');
+    background-image: url('/img/servizi/negozio.png');
 }
 
 /* overlay */
@@ -240,7 +240,7 @@
 
     background:
         linear-gradient(rgba(69,119,255,0.6), rgba(69,119,255,0.6)),
-        url("../img/unisciti/unisciti.png");
+        url("/img/unisciti/unisciti.png");
 
     background-position: center;
     background-size: cover;
@@ -255,7 +255,7 @@
 
     background:
         linear-gradient(rgba(0, 1, 4, 0.456)),
-        url("../img/servizi/lavaasciuga.jpg");
+        url("/img/servizi/lavaasciuga.jpg");
 
     background-position: center;
     background-size: cover;
