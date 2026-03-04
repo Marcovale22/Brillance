@@ -19,7 +19,9 @@ class RichiestaPreventivo extends Mailable
 
     public function build()
     {
-        $subject = "Richiesta preventivo - {$this->data['servizio']} ({$this->data['zona']})";
+        $servizio = $this->data['servizio'] ?? '—';
+        $zona = $this->data['zona'] ?? '—';
+        $subject = "Richiesta preventivo - {$servizio} ({$zona})";
 
         return $this->subject($subject)
             ->view('emails.preventivo')

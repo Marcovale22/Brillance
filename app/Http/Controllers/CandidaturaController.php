@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\CandidaturaRicevuta;
+use App\Jobs\InviaCandidaturaJob;
 
 class CandidaturaController extends Controller
 {
@@ -14,36 +15,32 @@ class CandidaturaController extends Controller
         return view('candidature.create');
     }
 
-    public function send(Request $request)
+    
+
+   public function send(Request $request)
     {
         $data = $request->validate([
-            'nome'     => ['required', 'string', 'max:80'],
-            'cognome'  => ['required', 'string', 'max:80'],
-            'email'    => ['required', 'email', 'max:120'],
-            'telefono' => ['required', 'string', 'max:30'],
-            'citta'    => ['nullable', 'string', 'max:120'],
-            'messaggio'=> ['nullable', 'string', 'max:2000'],
-            'cv'       => ['required', 'file', 'mimes:pdf,doc,docx', 'max:10240'], // 10MB
+            'nome'     => ['required','string','max:80'],
+            'cognome'  => ['required','string','max:80'],
+            'email'    => ['required','email','max:120'],
+            'telefono' => ['required','string','max:30'],
+            'cv'       => ['required','file','mimes:pdf,doc,docx','max:10240'],
             'privacy'  => ['accepted'],
         ]);
 
-        $cv = $request->file('cv');
-
-        // Destinatario: la mail che riceve i CV
         $to = env('CANDIDATURE_TO_EMAIL');
 
-        if (!$to) {
-            // Se non hai settato CANDIDATURE_TO_EMAIL in .env/railway variables
-            return back()
-                ->withInput()
-                ->withErrors(['email' => 'Configurazione email non completa (CANDIDATURE_TO_EMAIL mancante).']);
-        }
+        // ⚠️ togli l'UploadedFile dall'array data
+        unset($data['cv']);
 
-        Mail::to($to)->send(new CandidaturaRicevuta($data, $cv));
+        $cv = $request->file('cv');
+        $data['cv_original'] = $cv->getClientOriginalName();
 
-        // Se vuoi gestire errori SMTP in modo pulito:
-        // if (count(Mail::failures()) > 0) { ... }
+        // salva file e passa SOLO il path
+        $tmpPath = $cv->store('tmp/cv'); // es: tmp/cv/abc123.pdf
 
-        return back()->with('ok', 'Candidatura inviata correttamente. Grazie!');
+        InviaCandidaturaJob::dispatch($data, $tmpPath, $to);
+
+        return back()->with('ok', 'Candidatura inviata! Grazie.');
     }
 }
