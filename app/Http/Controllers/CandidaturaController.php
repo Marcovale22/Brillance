@@ -3,21 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\CandidaturaRicevuta;
 use App\Jobs\InviaCandidaturaJob;
 
 class CandidaturaController extends Controller
 {
     public function create()
     {
-        // Blade form: resources/views/candidature/create.blade.php
         return view('candidature.create');
     }
 
-    
-
-   public function send(Request $request)
+    public function send(Request $request)
     {
         $data = $request->validate([
             'nome'     => ['required','string','max:80'],
@@ -30,16 +25,21 @@ class CandidaturaController extends Controller
 
         $to = env('CANDIDATURE_TO_EMAIL');
 
-        // ⚠️ togli l'UploadedFile dall'array data
+        $cv = $request->file('cv');
+
         unset($data['cv']);
 
-        $cv = $request->file('cv');
-        $data['cv_original'] = $cv->getClientOriginalName();
+        $cvContent = base64_encode(file_get_contents($cv->getRealPath()));
+        $cvOriginalName = $cv->getClientOriginalName();
+        $cvMimeType = $cv->getMimeType();
 
-        // salva file e passa SOLO il path
-        $tmpPath = $cv->store('tmp/cv'); // es: tmp/cv/abc123.pdf
-
-        InviaCandidaturaJob::dispatch($data, $tmpPath, $to);
+        InviaCandidaturaJob::dispatch(
+            $data,
+            $cvContent,
+            $cvOriginalName,
+            $cvMimeType,
+            $to
+        );
 
         return back()->with('ok', 'Candidatura inviata! Grazie.');
     }

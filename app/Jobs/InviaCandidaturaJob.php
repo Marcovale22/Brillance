@@ -2,16 +2,12 @@
 
 namespace App\Jobs;
 
-use App\Mail\CandidaturaRicevuta;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Http;
-
 
 class InviaCandidaturaJob implements ShouldQueue
 {
@@ -19,14 +15,14 @@ class InviaCandidaturaJob implements ShouldQueue
 
     public function __construct(
         public array $data,
-        public string $cvPath,
+        public string $cvContent,
+        public string $cvOriginalName,
+        public ?string $cvMimeType,
         public string $toEmail
     ) {}
 
     public function handle(): void
     {
-        $fileFullPath = Storage::disk('local')->path($this->cvPath);
-
         $html = view('emails.candidatura', ['data' => $this->data])->render();
 
         $payload = [
@@ -41,21 +37,19 @@ class InviaCandidaturaJob implements ShouldQueue
             'htmlContent' => $html,
             'attachment' => [
                 [
-                    'name' => $this->data['cv_original'] ?? basename($fileFullPath),
-                    'content' => base64_encode(file_get_contents($fileFullPath)),
+                    'name' => $this->cvOriginalName,
+                    'content' => $this->cvContent,
                 ],
             ],
         ];
-
+        
         /** @var \Illuminate\Http\Client\Response $response */
-       $response = \Illuminate\Support\Facades\Http::withHeaders([
+        $response = Http::withHeaders([
             'api-key' => env('BREVO_API_KEY'),
             'accept' => 'application/json',
             'content-type' => 'application/json',
         ])->post('https://api.brevo.com/v3/smtp/email', $payload);
 
         $response->throw();
-
-        Storage::disk('local')->delete($this->cvPath);
     }
 }
